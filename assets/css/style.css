@@ -779,6 +779,10 @@ footer .menu-footer ul li a {
     font-size: 18px;
 }
 
+footer .menu-footer ul li a:hover{
+    color: #b5985b ;
+}
+
 footer .copyright {
     text-align: center;
     padding: 20px 0;
