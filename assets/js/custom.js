@@ -17,9 +17,17 @@
     // :: 4.0 SCROLL LINK ACTIVE CODE
     var scrollLink = $('.scroll');
 
-    // SCROLLSPY ACTIVE CODE
-    $('body').scrollspy({
-        target: '#appo-header'
+
+    // :: 3.0 WHATSAPP BTN ACTIVE CODE
+    var offset = 300;
+    var duration = 500;
+
+    $window.on('scroll', function () {
+        if ($(this).scrollTop() > offset) {
+            $(".float").fadeIn(duration);
+        } else {
+            $(".float").fadeOut(duration);
+        }
     });
 
     // :: 5.0 SMOOTH SCROLLING ACTIVE CODE
@@ -69,7 +77,7 @@
                 nav: true,
                 dots: false,
                 smartSpeed: 2000,
-                autoplay: false,
+                autoplay: true,
                 responsiveClass: true,
                 autoplayTimeout: 4000,
                 responsive: {
@@ -96,7 +104,7 @@
                 nav: true,
                 dots: false,
                 smartSpeed: 2000,
-                autoplay: false,
+                autoplay: true,
                 responsiveClass: true,
                 autoplayTimeout: 4000,
                 responsive: {

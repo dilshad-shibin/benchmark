@@ -82,6 +82,7 @@
     .form-header-box{
         min-height: 160px;
         border-bottom-left-radius: 0;
+        padding: 0 20px;
     }
     .about-head h1{
         font-size: 45px;
