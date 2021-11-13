@@ -14,6 +14,54 @@
         }
     });
 
+    // :: 4.0 SCROLL LINK ACTIVE CODE
+    var scrollLink = $('.scroll');
+
+    // SCROLLSPY ACTIVE CODE
+    $('body').scrollspy({
+        target: '#appo-header'
+    });
+
+    // :: 5.0 SMOOTH SCROLLING ACTIVE CODE
+    scrollLink.on('click', function(e) {
+        e.preventDefault();
+        $('body,html').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 1000);
+    });
+
+    // :: 8.0 PREVENT DEFAULT ACTIVE CODE
+    $("a[href='#']").on('click', function($) {
+        $.preventDefault();
+    });
+
+    //sider Menu
+    $('#toggle_menu').click(() => {
+        $('#sidemenu').addClass('side_active');
+    })
+    $('.close-svg').click(() => {
+        $('#sidemenu').removeClass('side_active');
+    })
+
+    $('#sidemenu ul li a').click(function () {
+    $('#sidemenu ul li a').removeClass('active1');
+    $(this).addClass('active1');
+    $('#sidemenu').removeClass('side_active');
+    })
+
+
+    $('.header_list ul li a').click(function () {
+        $('.header_list ul li a').removeClass('active1');
+        $(this).addClass('active1');
+
+    })
+
+    $('#sidemenu ul li a').click(function () {
+        $('#sidemenu ul li a').removeClass('active2');
+        $(this).addClass('active2');
+
+    })
+
     //Testimonials SLIDER ACTIVE CODE
             $('.testi-slider.owl-carousel').owlCarousel({
                 loop: true,
@@ -21,10 +69,9 @@
                 nav: true,
                 dots: false,
                 smartSpeed: 2000,
-                autoplay: true,
+                autoplay: false,
                 responsiveClass: true,
                 autoplayTimeout: 4000,
-                navText: ["<i class='icofont-arrow-left'></i>", "<i class='icofont-arrow-right'></i>"],
                 responsive: {
                     0: {
                         items: 1,
@@ -41,5 +88,31 @@
                     }
                 }
             });
-
+            
+            //Team SLIDER ACTIVE CODE
+            $('.team-slider.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                smartSpeed: 2000,
+                autoplay: false,
+                responsiveClass: true,
+                autoplayTimeout: 4000,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    576: {
+                        items: 2
+                    },
+                    768: {
+                        items: 3
+                    },
+                    992: {
+                        items: 4
+                    }
+                }
+            });
 }(jQuery));
